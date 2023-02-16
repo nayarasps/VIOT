@@ -13,12 +13,8 @@
         android:theme="@style/Theme.Viot"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activities.RegisterRoomActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:name=".ui.activities.DisplayRoomsActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activities.RegisterRoomActivity"
             android:exported="false">
