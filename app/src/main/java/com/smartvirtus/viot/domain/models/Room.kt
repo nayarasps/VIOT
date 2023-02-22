@@ -1,7 +1,9 @@
 package com.smartvirtus.viot.domain.models
 
+import kotlinx.serialization.*
 
-data class Room(
+@Serializable
+data class Room (
     val id: Int,
 
     val name: String,
@@ -11,5 +13,5 @@ data class Room(
     val roomSize: Int,
 
     val airConNumber: Int,
-
 )
+

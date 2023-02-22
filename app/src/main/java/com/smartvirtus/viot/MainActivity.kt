@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.smartvirtus.viot.framework.InMemoryLocationPersistenceSource
 import com.smartvirtus.viot.ui.activities.DisplayRoomsActivity
 import com.smartvirtus.viot.ui.activities.RegisterRoomActivity
 

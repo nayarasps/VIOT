@@ -18,8 +18,8 @@
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout
-        android:layout_width="226dp"
-        android:layout_height="201dp"
+        android:layout_width="249dp"
+        android:layout_height="205dp"
         android:layout_marginBottom="192dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,19 +29,19 @@
 
         <Button
             android:id="@+id/cadastro_sala_button"
-            android:layout_width="230dp"
-            android:layout_height="55dp"
-            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedbutton"
             android:text="@string/cadastrar_sala"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/background_blue" />
 
         <Button
             android:id="@+id/visualizacao_sala_button"
-            android:layout_width="230dp"
-            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/roundedbutton"
             android:text="Salas Cadastradas"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/background_blue" />

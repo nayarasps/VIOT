@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/gray"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/room_name"
+        android:layout_width="294dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/background_blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/delete_button"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:text="X"
+        android:textAlignment="center"
+        android:textColor="#DD2C00"
+        android:textSize="30sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</LinearLayout>
