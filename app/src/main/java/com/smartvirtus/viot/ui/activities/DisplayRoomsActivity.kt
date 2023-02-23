@@ -20,10 +20,6 @@ class DisplayRoomsActivity : AppCompatActivity() {
         val rvRooms = findViewById<View>(R.id.rvRooms) as RecyclerView
 
         val roomPersistence = InMemoryLocationPersistenceSource
-        val room = Room(1, "Sala de descompressão", 10, 30, 5)
-        val room2 = Room(2, "Sala 1", 15, 40, 1)
-        roomPersistence.saveNewRoom(room)
-        roomPersistence.saveNewRoom(room2)
 
         val adapter = RoomsAdapter(roomPersistence, this)
 

@@ -4,14 +4,13 @@ import kotlinx.serialization.*
 
 @Serializable
 data class Room (
-    val id: Int,
 
     val name: String,
 
-    val personsNumber: Int,
+    val personsNumber: String,
 
-    val roomSize: Int,
+    val roomSize: String,
 
-    val airConNumber: Int,
+    val airConNumber: String,
 )
 

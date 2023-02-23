@@ -20,13 +20,13 @@ class DetailRoomActivity : AppCompatActivity() {
 
         val personsNumber = findViewById<TextView>(R.id.persons_number)
         personsNumber.text = room.personsNumber.toString()
-            .plus(if (room.personsNumber > 1) " pessoas" else " pessoa")
+            .plus(" pessoas")
 
         val roomSize = findViewById<TextView>(R.id.room_size)
         roomSize.text = (room.roomSize.toString()).plus(" m²")
 
         val airConNumber = findViewById<TextView>(R.id.airCon_number)
         airConNumber.text = room.airConNumber.toString()
-            .plus(if (room.airConNumber > 1) " ar-condicionados" else " ar-condicionado")
+            .plus(" ar-condicionados" )
     }
 }
