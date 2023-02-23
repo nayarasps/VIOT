@@ -3,7 +3,7 @@ package com.smartvirtus.viot.framework
 import com.smartvirtus.viot.data.local.LocationPersistenceSource
 import com.smartvirtus.viot.domain.models.Room
 
-class InMemoryLocationPersistenceSource : LocationPersistenceSource {
+object InMemoryLocationPersistenceSource : LocationPersistenceSource {
 
     private var rooms: MutableList<Room> = mutableListOf();
 
@@ -20,4 +20,5 @@ class InMemoryLocationPersistenceSource : LocationPersistenceSource {
     override fun getRoom(position: Int): Room {
         return rooms[position]
     }
+
 }

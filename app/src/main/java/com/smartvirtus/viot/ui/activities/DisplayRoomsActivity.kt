@@ -19,14 +19,13 @@ class DisplayRoomsActivity : AppCompatActivity() {
 
         val rvRooms = findViewById<View>(R.id.rvRooms) as RecyclerView
 
-        // Remover depois, quartos inseridos apenas para testes
-        val rooms = InMemoryLocationPersistenceSource()
+        val roomPersistence = InMemoryLocationPersistenceSource
         val room = Room(1, "Sala de descompressão", 10, 30, 5)
         val room2 = Room(2, "Sala 1", 15, 40, 1)
-        rooms.saveNewRoom(room)
-        rooms.saveNewRoom(room2)
+        roomPersistence.saveNewRoom(room)
+        roomPersistence.saveNewRoom(room2)
 
-        val adapter = RoomsAdapter(rooms, this)
+        val adapter = RoomsAdapter(roomPersistence, this)
 
         rvRooms.adapter = adapter
 
