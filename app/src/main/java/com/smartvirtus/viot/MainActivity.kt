@@ -3,26 +3,33 @@ package com.smartvirtus.viot
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.smartvirtus.viot.adapter.RoomsAdapter
 import com.smartvirtus.viot.framework.InMemoryLocationPersistenceSource
-import com.smartvirtus.viot.ui.activities.DisplayRoomsActivity
 import com.smartvirtus.viot.ui.activities.RegisterRoomActivity
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.home)
+        setContentView(R.layout.display_rooms)
 
-        val buttonRegisterClick = findViewById<Button>(R.id.cadastro_sala_button)
-        buttonRegisterClick.setOnClickListener {
-            val intent = Intent(this, RegisterRoomActivity::class.java)
-            startActivity(intent)
-        }
+        val rvRooms = findViewById<View>(R.id.rvRooms) as RecyclerView
 
-        val buttonShowClick = findViewById<Button>(R.id.visualizacao_sala_button)
-        buttonShowClick.setOnClickListener {
-            val intent = Intent(this, DisplayRoomsActivity::class.java)
+        val roomPersistence = InMemoryLocationPersistenceSource
+
+        val adapter = RoomsAdapter(roomPersistence, this)
+
+        rvRooms.adapter = adapter
+
+        rvRooms.layoutManager = LinearLayoutManager(this)
+
+        val registerButtonClick = findViewById<Button>(R.id.cadastro_sala_button)
+        registerButtonClick.setOnClickListener {
+            val intent = Intent (this, RegisterRoomActivity::class.java)
             startActivity(intent)
         }
     }

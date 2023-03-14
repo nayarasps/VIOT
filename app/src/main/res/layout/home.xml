@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/cadastro_sala_button"
+            android:id="@+id/cadastro_sala_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedbutton"

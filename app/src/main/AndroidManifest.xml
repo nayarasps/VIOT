@@ -20,9 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.activities.DisplayRoomsActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.activities.RegisterRoomActivity"
             android:exported="false">
             <meta-data
