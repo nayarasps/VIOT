@@ -1,8 +1,9 @@
 package com.smartvirtus.viot.adapter
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +16,12 @@ import com.smartvirtus.viot.framework.InMemoryLocationPersistenceSource
 import com.smartvirtus.viot.ui.activities.DetailRoomActivity
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import java.io.Serializable
 
 
-class RoomsAdapter (private val rooms: InMemoryLocationPersistenceSource,
-                    private val context: Context)
+class RoomsAdapter(
+    private val rooms: InMemoryLocationPersistenceSource,
+    private val context: Context
+)
     : RecyclerView.Adapter<RoomsAdapter.ViewHolder>() {
 
 
@@ -48,7 +50,7 @@ class RoomsAdapter (private val rooms: InMemoryLocationPersistenceSource,
 
         val deleteButton = viewHolder.deleteButton
         deleteButton.setOnClickListener {
-            deleteItem(position)
+            confirmDeleteRoom(context, position)
         }
 
         val detailButton = viewHolder.detailButton
@@ -70,6 +72,16 @@ class RoomsAdapter (private val rooms: InMemoryLocationPersistenceSource,
         rooms.removeRoom(position)
         notifyItemRemoved(position)
         notifyDataSetChanged()
+    }
+
+    private fun confirmDeleteRoom(context: Context, position: Int) {
+        val builder = AlertDialog.Builder(context, R.style.MyDialogTheme)
+        builder.setTitle("Deletar Sala?")
+        builder.setCancelable(false)
+        builder.setPositiveButton(R.string.sim, DialogInterface.OnClickListener { dialog, id -> deleteItem(position)})
+        builder.setNegativeButton(R.string.cancelar, DialogInterface.OnClickListener { dialog, id -> dialog.cancel()})
+
+        builder.show()
     }
 
 }

@@ -1,5 +1,6 @@
 package com.smartvirtus.viot
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,5 +33,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent (this, RegisterRoomActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    val confirmDeleteRoom =  {
+        val builder = AlertDialog.Builder(this, R.style.MyDialogTheme)
+        builder.setTitle("Deletar Sala?")
+        builder.setCancelable(false)
+
     }
 }
