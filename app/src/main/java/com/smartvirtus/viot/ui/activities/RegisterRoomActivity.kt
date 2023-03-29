@@ -14,6 +14,7 @@ import com.smartvirtus.viot.domain.models.Room
 import com.smartvirtus.viot.framework.InMemoryLocationPersistenceSource
 import kotlinx.coroutines.NonCancellable.start
 
+
 class RegisterRoomActivity : AppCompatActivity() {
     lateinit var roomNameBox: EditText;
 
@@ -23,6 +24,7 @@ class RegisterRoomActivity : AppCompatActivity() {
 
     lateinit var roomSizeBox: EditText;
 
+    var isAllFieldsChecked = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_room)
@@ -38,9 +40,33 @@ class RegisterRoomActivity : AppCompatActivity() {
         var registerButton = findViewById<Button>(R.id.cadastro_de_sala_button)
         registerButton.setOnClickListener {
 
-            confirmRegisterRoom();
+            isAllFieldsChecked = CheckAllFields()
+            if (isAllFieldsChecked) {
+                confirmRegisterRoom();
+            }
         }
 
+    }
+
+    private fun CheckAllFields(): Boolean {
+        if (roomNameBox.length() == 0) {
+            roomNameBox.error = "This field is required"
+            return false
+        }
+        if (numberPeopleBox.length() == 0) {
+            numberPeopleBox.error = "This field is required"
+            return false
+        }
+        if (numberArBox.length() == 0) {
+            numberArBox.error = "This field is required"
+            return false
+        } else if (roomSizeBox.length() == 0) {
+            roomSizeBox.error = "This field is required"
+            return false
+        }
+
+        // after all validation return true.
+        return true
     }
 
     private fun saveRoom() {
